@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>20260515</title>
+<style>
+ body {
+  font-family: "MS Gothic", "MS Mincho", monospace;
+  max-width: 40em;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 1.8;
+ }
+  h1 {
+  font-size: 1.2em;
+  font-weight: normal;
+  margin-bottom: 1em;
+}
+
+p {
+  text-indent: 1em;
+  margin: 0;
+}
+  
+p:empty {
+  margin: 1em 0;
+}
+
+p:last-of-type {
+  margin-top: 1em;
+}
+  
+</style>
+</head>
+<body>
+
+  <h1>20260515</h1>
+
+<p>バイト後、クリエイティブ交流会へ。家を出る前に急いで印刷した作業日誌3万字を持って行く。交流会にはよく行くのだが、インスタグラムなどの交換が一切無いまま終わってしまうため完全な一期一会である。SNSを交換するとき、そこにはとてもだらしない時間が流れている。囲碁将棋根建の言う「だらしねえって」と同じようなニュアンス。</p>
+<p></p>
+<p>寝台船に行くと、もうすぐ京都を出てしまう後輩が立ち飲みをしていた。最後の挨拶をして帰宅。</p>
+  <p>
+  <a href="../index.html">戻る</a>
+</p>
+
+   
+</body>
+</html>
