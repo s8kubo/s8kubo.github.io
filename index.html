@@ -47,77 +47,7 @@ p:empty {
 </style>
 </head>
 
-<script>
-const SUPABASE_URL = "https://bbpsozzjykfcvowagehd.supabase.co";
-const SUPABASE_KEY = "sb_publishable_GIzF9DwUmwEMkljJqCX6pw_yvyzrB8h";
 
-const pushButton = document.getElementById("push-button");
-const pushCount = document.getElementById("push-count");
-
-function showCount(value) {
-  const number = Number(value);
-
-  if (!Number.isFinite(number)) return;
-
-  const current = Number(pushCount.textContent);
-
-  if (!Number.isFinite(current) || number > current) {
-    pushCount.textContent = number;
-  }
-}
-
-async function getPushCount() {
-  try {
-    const response = await fetch(
-      `${SUPABASE_URL}/rest/v1/rpc/get_push_count`,
-      {
-        method: "POST",
-        headers: {
-          "apikey": SUPABASE_KEY,
-          "Authorization": `Bearer ${SUPABASE_KEY}`,
-          "Content-Type": "application/json"
-        },
-        body: "{}"
-      }
-    );
-
-    if (!response.ok) throw new Error("count error");
-
-    const count = await response.json();
-    showCount(count);
-
-  } catch (error) {
-    pushCount.textContent = "?";
-  }
-}
-
-pushButton.addEventListener("click", async () => {
-  try {
-    const response = await fetch(
-      `${SUPABASE_URL}/rest/v1/rpc/push_once`,
-      {
-        method: "POST",
-        headers: {
-          "apikey": SUPABASE_KEY,
-          "Authorization": `Bearer ${SUPABASE_KEY}`,
-          "Content-Type": "application/json"
-        },
-        body: "{}"
-      }
-    );
-
-    if (!response.ok) throw new Error("push error");
-
-    const count = await response.json();
-    showCount(count);
-
-  } catch (error) {
-    console.error(error);
-  }
-});
-
-getPushCount();
-</script>
   
 <body>
 <h1>大久保颯</h1>
@@ -314,4 +244,77 @@ getPushCount();
 
   
 </body>
+
+<script>
+const SUPABASE_URL = "https://bbpsozzjykfcvowagehd.supabase.co";
+const SUPABASE_KEY = "sb_publishable_GIzF9DwUmwEMkljJqCX6pw_yvyzrB8h";
+
+const pushButton = document.getElementById("push-button");
+const pushCount = document.getElementById("push-count");
+
+function showCount(value) {
+  const number = Number(value);
+
+  if (!Number.isFinite(number)) return;
+
+  const current = Number(pushCount.textContent);
+
+  if (!Number.isFinite(current) || number > current) {
+    pushCount.textContent = number;
+  }
+}
+
+async function getPushCount() {
+  try {
+    const response = await fetch(
+      `${SUPABASE_URL}/rest/v1/rpc/get_push_count`,
+      {
+        method: "POST",
+        headers: {
+          "apikey": SUPABASE_KEY,
+          "Authorization": `Bearer ${SUPABASE_KEY}`,
+          "Content-Type": "application/json"
+        },
+        body: "{}"
+      }
+    );
+
+    if (!response.ok) throw new Error("count error");
+
+    const count = await response.json();
+    showCount(count);
+
+  } catch (error) {
+    pushCount.textContent = "?";
+  }
+}
+
+pushButton.addEventListener("click", async () => {
+  try {
+    const response = await fetch(
+      `${SUPABASE_URL}/rest/v1/rpc/push_once`,
+      {
+        method: "POST",
+        headers: {
+          "apikey": SUPABASE_KEY,
+          "Authorization": `Bearer ${SUPABASE_KEY}`,
+          "Content-Type": "application/json"
+        },
+        body: "{}"
+      }
+    );
+
+    if (!response.ok) throw new Error("push error");
+
+    const count = await response.json();
+    showCount(count);
+
+  } catch (error) {
+    console.error(error);
+  }
+});
+
+getPushCount();
+</script>
+
 </html>
