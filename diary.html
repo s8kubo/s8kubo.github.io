@@ -23,7 +23,8 @@
 
   <h1>無呼吸日記</h1>
 
-<p>只今2026年10月9日午前6時20分。
+<p id="diary">
+只今2026年10月9日午前6時20分。
 この日記はただの日記ではない。アーカイブにおいて重要なのは日付である。その時何をやったかが分かるように、日付という壁を設けたり段落を分けたりして、時間をせき止める。
 しかし時間というものは連続的である。今日の自分は昨日の自分と全くの別物であるが、その間が存在しないわけではない。
 日記を付ける目的とは何だろう。一日一日の反復の可視化？自分という存在の客観化？そんなものは一旦考えず、日記というシステムを解体し、ただ息も絶え絶えに文字を打っていく作業を楽しみたい。
@@ -40,6 +41,15 @@
   <a href="../index.html">戻る</a>
 </p>
 
+<script>
+const diary = document.getElementById("diary");
+
+diary.childNodes.forEach(node => {
+  if (node.nodeType === Node.TEXT_NODE) {
+    node.textContent = node.textContent.replace(/\r?\n\s*/g, "");
+  }
+});
+</script>
    
 </body>
 </html>
